@@ -326,7 +326,7 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
   height:505px;
   min-height:505px;
   overflow:hidden;
-  background:linear-gradient(180deg,#e7eef6 0%,#edf3f8 60%,#e6edf5 100%);
+  background:#e7eff8; /* uniform base under the full illustration */
 }
 .hero-art{
   position:absolute;
@@ -337,14 +337,20 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
   opacity:1;
   animation:none!important;
   translate:none!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .hero-art .hero-image{
   position:relative;
   inset:auto;
-  width:100%;
+  width:auto;
   height:100%;
   max-width:100%;
   object-fit:contain!important;
+  /* Blend the real image edge into the banner background, without a vertical seam. */
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 94%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 94%,transparent 100%);
   object-position:center center!important;
   opacity:1!important;
   filter:none!important;
