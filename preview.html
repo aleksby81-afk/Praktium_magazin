@@ -319,6 +319,169 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
 .hero-art .hero-image{transform:none!important;transition:none}
 .gm-item,.gm-item *{transition:none!important}
 }
+
+/* PRAKTIUM HERO SMOOTH CENTERED 2026-11-18 */
+/* A restrained breathing hero: no pointer tracking, no image change or cropping. */
+.hero{
+  height:505px;
+  min-height:505px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#e7eef6 0%,#edf3f8 60%,#e6edf5 100%);
+}
+.hero-art{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:1;
+  animation:none!important;
+  translate:none!important;
+}
+.hero-art .hero-image{
+  position:relative;
+  inset:auto;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  object-fit:contain!important;
+  object-position:center center!important;
+  opacity:1!important;
+  filter:none!important;
+  transform-origin:50% 56%;
+  transform:none;
+  transition:none!important;
+  animation:praktiumBreathe 11s cubic-bezier(.45,0,.55,1) infinite;
+  will-change:transform;
+}
+@keyframes praktiumBreathe{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.022)}
+}
+.hero::before,.hero::after{display:none!important;content:none!important}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:0;
+}
+.hero-copy{
+  position:relative;
+  max-width:575px;
+  padding:0;
+  background:none;
+  box-shadow:none;
+  border-radius:0;
+}
+.hero-copy::before{
+  content:"";
+  pointer-events:none;
+  position:absolute;
+  z-index:-1;
+  inset:-32px -35px -32px -38px;
+  background:radial-gradient(ellipse at 30% 48%,rgba(231,238,246,.42),rgba(231,238,246,.13) 56%,transparent 78%);
+  border-radius:50%;
+}
+.hero .eyebrow{
+  font-size:15px;
+  font-weight:800;
+  margin-bottom:20px;
+  color:#bf5419;
+  letter-spacing:.06em;
+}
+.hero h1{
+  font-size:clamp(45px,4.35vw,60px);
+  line-height:1.105;
+  font-weight:800;
+  color:#1e3856;
+  letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.hero p{
+  font-size:19px;
+  line-height:1.58;
+  font-weight:500;
+  color:#405269;
+  max-width:465px;
+  margin:23px 0 27px;
+}
+.hero .button{
+  font-size:17px;
+  font-weight:750;
+  padding:14px 30px;
+  min-height:55px;
+  box-shadow:0 10px 22px rgba(218,100,28,.2);
+}
+.hero-spark{
+  animation-duration:6s;
+}
+.product::before{
+  display:block!important;
+  height:4px;
+  z-index:3;
+}
+.product:nth-child(3n + 1)::before{background:linear-gradient(90deg,#f1752d,#fbb27e)}
+.product:nth-child(3n + 2)::before{background:linear-gradient(90deg,#274867,#7099bd)}
+.product:nth-child(3n + 3)::before{background:linear-gradient(90deg,#43974b,#9bcea0)}
+@media(max-width:1100px){
+  .hero{height:480px;min-height:480px}
+  .hero-copy{max-width:54%}
+  .hero h1{font-size:clamp(42px,4.3vw,52px)}
+  .hero p{font-size:18px}
+}
+@media(max-width:850px){
+  .hero{height:470px;min-height:470px}
+  .hero-art .hero-image{object-position:center center!important}
+  .hero-copy{
+    max-width:53%;
+    padding:0;
+    background:none;
+    box-shadow:none;
+  }
+  .hero h1{font-size:clamp(38px,5.2vw,45px)}
+  .hero p{font-size:17px;line-height:1.5}
+  .hero .eyebrow{font-size:13px;margin-bottom:15px}
+  .hero .button{min-height:50px;font-size:16px}
+}
+@media(max-width:520px){
+  .hero{height:565px;min-height:565px}
+  .hero-art{inset:auto -95px 0 -95px;height:260px;overflow:hidden}
+  .hero-art .hero-image{
+    height:100%;
+    width:100%;
+    object-fit:contain!important;
+    object-position:center bottom!important;
+  }
+  .hero-inner{
+    align-items:flex-start;
+    padding-top:22px;
+  }
+  .hero-copy{
+    max-width:100%;
+    width:100%;
+    padding:0;
+    background:none;
+    box-shadow:none;
+  }
+  .hero-copy::before{display:none}
+  .hero .eyebrow{font-size:13px;margin-bottom:12px}
+  .hero h1{
+    font-size:clamp(38px,9.6vw,43px);
+    line-height:1.13;
+  }
+  .hero p{
+    font-size:17px;
+    line-height:1.5;
+    max-width:100%;
+    margin:13px 0 19px;
+  }
+  .hero .button{font-size:16px;min-height:50px;padding:12px 23px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art,.hero-art .hero-image{animation:none!important;transform:none!important;will-change:auto}
+ .hero-spark{animation:none!important}
+}
+
 </style>
 </head>
 <body data-preview>
@@ -495,12 +658,5 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
   buttons.forEach(other=>other.setAttribute('aria-expanded',String(active&&other===b)));
   info.textContent=active?ms[b.dataset.contact]:'Нажмите на иконку. Контакты продавца будут добавлены перед запуском продаж.';
  }));
- const hero=document.querySelector('.hero'),img=hero?.querySelector('.hero-art img');
- if(img&&matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  let raf=0,dx=0,dy=0;
-  const paint=()=>{raf=0;img.style.setProperty('--dx',(dx*7).toFixed(1)+'px');img.style.setProperty('--dy',(dy*4).toFixed(1)+'px');img.style.setProperty('--ry',(dx*1.4).toFixed(1)+'deg');img.style.setProperty('--rx',(-dy).toFixed(1)+'deg')};
-  hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();dx=Math.max(-1,Math.min(1,(e.clientX-r.left)/r.width*2-1));dy=Math.max(-1,Math.min(1,(e.clientY-r.top)/r.height*2-1));if(!raf)raf=requestAnimationFrame(paint)},{passive:true});
-  hero.addEventListener('pointerleave',()=>{dx=dy=0;if(!raf)raf=requestAnimationFrame(paint)});
- }
 })();
 </script></body></html>
