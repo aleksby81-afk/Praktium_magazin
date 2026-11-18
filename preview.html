@@ -741,132 +741,100 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
 
 
 
-/* PRAKTIUM SELECTED WIDE SNOW BANNER 2026-11-18; preserve source art proportions. */
+
+/* PRAKTIUM CONTINUOUS SNOW BACKGROUND 2026-11-18: exactly one uninterrupted photograph. */
 .ny-sale{
-  position:relative; isolation:isolate; overflow:hidden;
-  display:block; width:100%; max-width:none;
-  min-height:0; height:220px; padding:0!important; margin:0;
-  border:0; border-radius:0; box-shadow:none;
-  color:#173c66;
-  background:radial-gradient(ellipse at 60% 28%,#f7f2fa 0%,#ebf2fb 48%,#dceafd 100%);
+ position:relative;isolation:isolate;overflow:hidden;
+ display:block;width:100%;max-width:none;
+ height:22vw;min-height:210px;max-height:420px;
+ margin:0;padding:0!important;
+ border:0;border-radius:0;box-shadow:none;
+ background:#dfeafa;color:#133b68;
 }
-.ny-sale::before{
- content:"";z-index:0;pointer-events:none;position:absolute;inset:0;
- background:linear-gradient(to bottom,rgba(234,243,254,.1),rgba(255,255,255,.08) 73%,rgba(223,237,251,.5));
+.ny-sale::before,.ny-sale::after{display:none!important;content:none!important}
+.ny-unbroken-art{
+ position:absolute;inset:0;display:block;z-index:0;
+ width:100%;height:100%;max-width:none;
+ object-fit:cover;object-position:50% 46%;
+ pointer-events:none;
 }
-.ny-sale::after{display:none!important;content:none!important}
-.ny-source-left,.ny-source-right{
-  display:block;position:absolute;z-index:1;top:0;bottom:0;pointer-events:none;
-  background-image:url("https://d2ol7oe51mr4n9.cloudfront.net/user_39WHOqZ1BewvFjV8zfVYzSULgpc/d47e0942-af36-48a1-b67b-a371a003871e.png");background-repeat:no-repeat;
-  background-size:auto 272px;filter:none;opacity:1;
-}
-.ny-source-left{
-  left:0;width:430px;background-position:left center;
-  -webkit-mask-image:linear-gradient(to right,#000 0%,#000 89%,transparent 100%);
-  mask-image:linear-gradient(to right,#000 0%,#000 89%,transparent 100%);
-}
-.ny-source-right{
-  right:0;width:143px;background-position:right center;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 100%);
-  mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 100%);
-}
-.ny-row{
-  position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-end;
-  height:100%;width:100%;max-width:none;
-  padding:0 clamp(145px,13vw,230px) 0 410px!important;
-  margin:0;gap:0;
-}
+.ny-side-art,.ny-source-left,.ny-source-right,.ny-selected-banner,.ny-photo,.ny-decoration,.ny-symbol,.ny-ornament{display:none!important}
 .ny-message{
-  position:absolute!important;left:-10000px!important;top:auto!important;
-  width:1px!important;height:1px!important;overflow:hidden!important;
-  clip-path:inset(50%);white-space:nowrap;
+ position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;
+ clip-path:inset(50%);white-space:nowrap;left:-10000px;top:auto;
 }
+.ny-mobile-head{display:none}
 .ny-countdown-stage{
-  display:block;position:relative;z-index:2;
-  width:min(100%,450px);max-width:450px;min-width:0;
-  height:auto;top:auto;left:auto;padding:0;margin:0;flex:0 1 450px;
-  background:none;
+ position:absolute;z-index:2;
+ left:48.35%;top:44.45%;
+ width:31.9%;height:26.5%;
+ padding:0;margin:0;min-width:0;max-width:none;
 }
 .ny-timer{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  width:100%;min-width:0;height:auto;padding:3px 0;
-  border:0;border-radius:0;background:none;box-shadow:none;
-  backdrop-filter:none;
+ display:block;width:100%;height:100%;
+ padding:0;margin:0;min-width:0;
+ background:none;border:none;border-radius:0;box-shadow:none;backdrop-filter:none;
 }
 .ny-label{
-  display:block;text-align:center;
-  font-size:clamp(11px,1.03vw,14px);font-weight:800;
-  color:#153d6e;text-transform:uppercase;letter-spacing:.035em;
-  margin:0 0 12px;
-  line-height:1.2;
+ position:absolute;width:1px;height:1px;overflow:hidden;
+ clip-path:inset(50%);white-space:nowrap;
 }
-.ny-digits{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ny-digits{
+ width:100%;height:100%;
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5.45%;
+ align-items:stretch;justify-content:space-between;
+ font-variant-numeric:tabular-nums;
+}
 .ny-timebox{
-  flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:11px 2px 9px;gap:3px;
-  background:linear-gradient(155deg,#fffefa 0%,#fdf1e4 100%);
-  border:1.5px solid #e8b66d;border-radius:13px;
-  box-shadow:0 5px 10px rgba(202,139,47,.17),inset 0 2px #fff;
+ min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:3px;padding:1px;
+ background:linear-gradient(158deg,#fffdf9 2%,#ffefd8 100%);
+ border:1px solid #e8b56d;border-radius:clamp(7px,1vw,15px);
+ box-shadow:0 3px 9px rgba(180,110,37,.17),inset 0 1px 0 rgba(255,255,255,.98);
 }
 .ny-value{
-  font-family:Manrope,Inter,system-ui,sans-serif;
-  font-size:clamp(26px,2.7vw,39px);font-weight:800;line-height:1.12;
-  color:#a4141a;text-shadow:none;font-variant-numeric:tabular-nums;
+ font-family:Manrope,Inter,system-ui,sans-serif;
+ font-size:clamp(24px,3.5vw,67px);font-weight:800;
+ line-height:1.1;color:#a3171b;text-shadow:none;
+ font-variant-numeric:tabular-nums;
 }
 .ny-unit{
- color:#13375f;font-size:clamp(9px,.79vw,11px);
- font-weight:800;line-height:1.25;text-transform:uppercase;letter-spacing:.02em;
+ font-family:Manrope,Inter,system-ui,sans-serif;
+ color:#153b68;font-size:clamp(9px,1.05vw,20px);font-weight:800;
+ text-transform:uppercase;white-space:nowrap;letter-spacing:-.01em;
+ line-height:1.15;
 }
-.ny-separator{
-  font-weight:800;font-size:23px;margin:-8px -1px 0;
-  color:#bd721d;flex:0 0 auto;
+.ny-separator{display:none!important}
+@media(max-width:850px){
+ .ny-sale{height:24vw;min-height:180px;max-height:none}
+ .ny-unbroken-art{object-position:50% 46%}
+ .ny-countdown-stage{left:48.2%;top:43.9%;width:32.2%;height:27.2%}
+ .ny-timebox{gap:1px}
+ .ny-value{font-size:clamp(18px,3.45vw,29px)}
+ .ny-unit{font-size:clamp(7px,.98vw,9px)}
+ .ny-digits{gap:5.3%}
 }
-.ny-selected-banner,.ny-side-art,.ny-photo,.ny-decoration,.ny-symbol,.ny-mobile-head,.ny-ornament{display:none!important}
-@media(max-width:1150px){
-  .ny-source-left,.ny-source-right{background-size:auto 248px}
-  .ny-source-left{width:396px}
-  .ny-source-right{width:130px}
-  .ny-row{padding-left:385px!important;padding-right:125px!important}
-  .ny-countdown-stage{flex-basis:405px;max-width:405px}
-  .ny-label{margin-bottom:9px}
-  .ny-value{font-size:29px}
-  .ny-timebox{padding:9px 1px 8px}
+@media(max-width:630px){
+ .ny-sale{height:248px;min-height:248px}
+ .ny-unbroken-art{object-fit:cover;object-position:87% 46%;opacity:.3}
+ .ny-mobile-head{display:block;position:relative;z-index:1;text-align:center;padding:22px 12px 7px}
+ .ny-mobile-head span{color:#a14c30;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.09em}
+ .ny-mobile-head h2{font-size:clamp(23px,6.4vw,34px);font-weight:800;line-height:1.13;color:#183e6a;max-width:400px;margin:3px auto 0}
+ .ny-countdown-stage{position:relative;top:auto;left:auto;width:min(calc(100% - 30px),420px);height:92px;margin:23px auto 0}
+ .ny-timer{padding:0}
+ .ny-label{display:block;position:static;width:auto;height:auto;clip-path:none;overflow:visible;white-space:normal;text-align:center;font-size:10px;font-weight:800;color:#244e7e;margin-bottom:7px;text-transform:uppercase;line-height:1}
+ .ny-digits{height:71px;gap:4px}
+ .ny-timebox{border-radius:10px}
+ .ny-value{font-size:clamp(23px,6.3vw,34px)}
+ .ny-unit{font-size:9px}
 }
-@media(max-width:920px){
-  .ny-sale{height:205px}
-  .ny-source-left,.ny-source-right{background-size:auto 228px}
-  .ny-source-left{width:354px}
-  .ny-source-right{width:120px}
-  .ny-row{padding-left:350px!important;padding-right:111px!important}
-  .ny-countdown-stage{flex-basis:345px;max-width:345px}
-  .ny-value{font-size:25px}
-  .ny-label{font-size:11px}
-  .ny-digits{gap:3px}
-  .ny-timebox{padding:8px 1px 7px;border-radius:9px}
-  .ny-unit{font-size:9px}
-}
-@media(max-width:740px){
-  .ny-sale{height:285px}
-  .ny-source-left{top:0;bottom:auto;left:0;width:320px;height:170px;background-size:auto 205px;background-position:left top}
-  .ny-source-right{top:0;bottom:auto;right:0;width:109px;height:170px;background-size:auto 205px;background-position:right top}
-  .ny-row{height:100%;width:100%;padding:149px 16px 14px!important;justify-content:center;align-items:flex-end}
-  .ny-countdown-stage{width:min(100%,420px);max-width:420px;flex:1 1 auto}
-  .ny-timer{padding:0}
-  .ny-label{font-size:11px;margin-bottom:8px}
-  .ny-value{font-size:clamp(24px,5vw,33px)}
-  .ny-timebox{padding:9px 1px 8px}
-  .ny-unit{font-size:9px}
-}
-@media(max-width:390px){
- .ny-source-left{background-size:auto 190px;width:285px;height:160px}
- .ny-source-right{background-size:auto 190px;width:96px;height:160px}
- .ny-row{padding:144px 9px 15px!important}
- .ny-sale{height:273px}
- .ny-timebox{padding:8px 0}
- .ny-value{font-size:23px}
+@media(max-width:365px){
+ .ny-sale{height:252px}
+ .ny-mobile-head h2{font-size:22px}
+ .ny-countdown-stage{margin-top:20px}
+ .ny-digits{gap:3px}
+ .ny-value{font-size:22px}
  .ny-unit{font-size:8px}
- .ny-digits{gap:2px}
- .ny-separator{font-size:16px}
 }
 
 </style>
@@ -881,29 +849,23 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
 <span class="hero-spark hs2"><svg viewBox="0 0 24 24" fill="none" stroke="#54B05C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span>
 <span class="hero-spark hs3"><svg viewBox="0 0 24 24" fill="none" stroke="#FDEEE3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span><div class="wrap hero-inner"><div class="hero-copy"><div class="eyebrow">Практика и ум</div><h1 id="heroTitle">Всё нужное для дома<br>в <span>одном месте</span></h1><p>Полезные вещи для дома, ухода за собой<br>и повседневного комфорта.</p><a class="button" href="#goods">Выбрать товар <span aria-hidden="true">→</span></a><div class="hero-chips" aria-label="Направления каталога"><span class="hero-chip">Дом и уют</span><span class="hero-chip">Уход за собой</span><span class="hero-chip">Для повседневного комфорта</span></div></div></div></section>
 <div class="deco-tear" aria-hidden="true"></div>
-<section class="ny-sale" id="newYearCountdown" aria-label="Предновогодняя распродажа, сезон 26. Отсчёт до Нового года">
-  <div class="ny-source-left" aria-hidden="true"></div>
-  <div class="ny-source-right" aria-hidden="true"></div>
-  <div class="ny-message">
-    <span class="ny-tag">Сезон 26</span>
-    <h2>Предновогодняя распродажа</h2>
-    <p>Праздничное предложение товаров для дома</p>
-  </div>
-  <div class="wrap ny-row">
-    <div class="ny-countdown-stage">
-      <div class="ny-timer" role="timer" aria-label="До Нового года осталось">
-        <span class="ny-label">До Нового года осталось</span>
-        <div class="ny-digits">
-          <div class="ny-timebox"><span class="ny-value" id="nyDays">—</span><span class="ny-unit" id="nyDaysUnit">дней</span></div>
-          <span class="ny-separator" aria-hidden="true">:</span>
-          <div class="ny-timebox"><span class="ny-value" id="nyHours">—</span><span class="ny-unit" id="nyHoursUnit">часов</span></div>
-          <span class="ny-separator" aria-hidden="true">:</span>
-          <div class="ny-timebox"><span class="ny-value" id="nyMinutes">—</span><span class="ny-unit" id="nyMinutesUnit">минут</span></div>
-          <span class="ny-separator" aria-hidden="true">:</span>
-          <div class="ny-timebox"><span class="ny-value" id="nySeconds">—</span><span class="ny-unit" id="nySecondsUnit">секунд</span></div>
-        </div>
-      </div>
+<section class="ny-sale" id="newYearCountdown" aria-label="Предновогодняя распродажа, сезон 26">
+  <img class="ny-unbroken-art" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39WHOqZ1BewvFjV8zfVYzSULgpc/d47e0942-af36-48a1-b67b-a371a003871e.png" alt="Предновогодняя распродажа — сезон 26. Снежный фон, подарок, еловые ветви и ёлочные шары." width="2172" height="724">
+  <div class="ny-message" aria-hidden="true"><span class="ny-tag">Сезон 26</span><h2>Предновогодняя распродажа</h2><p>Товары для дома и полезные подарки к праздникам</p></div>
+  <div class="ny-mobile-head"><span>Сезон 26</span><h2>Предновогодняя распродажа</h2></div>
+  <div class="ny-countdown-stage">
+   <div class="ny-timer" role="timer" aria-label="До Нового года осталось">
+    <span class="ny-label">До Нового года осталось</span>
+    <div class="ny-digits">
+      <div class="ny-timebox"><span class="ny-value" id="nyDays">—</span><span class="ny-unit" id="nyDaysUnit">дней</span></div>
+      <span class="ny-separator" aria-hidden="true">:</span>
+      <div class="ny-timebox"><span class="ny-value" id="nyHours">—</span><span class="ny-unit" id="nyHoursUnit">часов</span></div>
+      <span class="ny-separator" aria-hidden="true">:</span>
+      <div class="ny-timebox"><span class="ny-value" id="nyMinutes">—</span><span class="ny-unit" id="nyMinutesUnit">минут</span></div>
+      <span class="ny-separator" aria-hidden="true">:</span>
+      <div class="ny-timebox"><span class="ny-value" id="nySeconds">—</span><span class="ny-unit" id="nySecondsUnit">секунд</span></div>
     </div>
+   </div>
   </div>
 </section>
 <section class="catalog" id="goods" aria-labelledby="catalogTitle"><div class="wrap"><div class="section-heading"><h2 id="catalogTitle">Каталог товаров</h2><p id="productCount" aria-live="polite">12 товаров</p></div><div class="filters" role="group" aria-label="Категории товаров"><button type="button" class="filter" data-filter="all" aria-pressed="true">Все товары</button><button type="button" class="filter" data-filter="Уход за собой" aria-pressed="false">Уход за собой</button><button type="button" class="filter" data-filter="Дом и уют" aria-pressed="false">Дом и уют</button><button type="button" class="filter" data-filter="Здоровье" aria-pressed="false">Здоровье</button><button type="button" class="filter" data-filter="Одежда" aria-pressed="false">Одежда</button></div><div class="products"><article class="product" data-id="massager-black" data-category="Уход за собой">
@@ -1089,10 +1051,7 @@ function decl(n,f){const x=n%10,y=n%100;return(y>=11&&y<=14)?f[2]:x===1?f[0]:(x>
 function tick(){
  let remain=Math.max(0,endsAt-Date.now());
  if(remain===0){
-  section.querySelector('.ny-tag').textContent='Новый год 2027';
-  section.querySelector('.ny-message h2').textContent='С Новым годом!';
-  section.querySelector('.ny-message p').textContent='Пусть новый год будет уютным и радостным.';
-  section.querySelector('.ny-countdown-stage').hidden=true;
+  section.hidden=true;
   clearInterval(timer);return;
  }
  for(const item of nodes){
