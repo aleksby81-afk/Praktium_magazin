@@ -894,6 +894,39 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
  .ny-unit{font-size:9px!important}
 }
 
+
+/* Compact sticky sale banner — evaluation prototype only. */
+.ny-sale.ny-is-pinned{position:fixed!important;top:var(--ny-header-height,84px)!important;left:0!important;right:0!important;width:100%!important;z-index:4!important;height:82px!important;min-height:82px!important;max-height:82px!important;box-shadow:0 5px 20px rgba(27,51,78,.16)!important}
+.ny-sale.ny-is-pinned .ny-backdrop .ny-bgl{width:calc(82px * 395 / 370)!important}
+.ny-sale.ny-is-pinned .ny-backdrop .ny-bgr{width:calc(82px * 381 / 370)!important}
+.ny-sale.ny-is-pinned .ny-title-art{left:clamp(105px,17vw,310px)!important;top:4px!important;width:clamp(180px,18vw,310px)!important;height:72px!important;max-height:72px!important;transform:none!important}
+.ny-sale.ny-is-pinned .ny-live-clock{left:56%!important;top:5px!important;width:29%!important;height:72px!important}
+.ny-sale.ny-is-pinned .ny-clock-caption{font-size:clamp(11px,.85vw,14px)!important;margin-bottom:3px!important;line-height:1.15!important}
+.ny-sale.ny-is-pinned .ny-clock-values{height:48px!important;gap:5px!important}
+.ny-sale.ny-is-pinned .ny-timebox{padding:2px!important;border-radius:6px!important;gap:0!important}
+.ny-sale.ny-is-pinned .ny-value{font-size:clamp(17px,1.5vw,24px)!important;line-height:1.1!important}
+.ny-sale.ny-is-pinned .ny-unit{font-size:clamp(8px,.58vw,10px)!important}
+@media(max-width:800px){
+ .ny-sale.ny-is-pinned{height:75px!important;min-height:75px!important;max-height:75px!important}
+ .ny-sale.ny-is-pinned .ny-backdrop .ny-bgl{width:calc(75px * 395 / 370)!important;opacity:.75!important}
+ .ny-sale.ny-is-pinned .ny-backdrop .ny-bgr{width:calc(75px * 381 / 370)!important;opacity:.75!important}
+ .ny-sale.ny-is-pinned .ny-title-art{left:13%!important;top:5px!important;width:39%!important;height:65px!important;max-height:65px!important;transform:none!important}
+ .ny-sale.ny-is-pinned .ny-live-clock{left:55%!important;top:3px!important;width:36%!important;height:67px!important}
+ .ny-sale.ny-is-pinned .ny-clock-caption{font-size:10px!important;white-space:normal!important;text-align:center!important;margin-bottom:2px!important}
+ .ny-sale.ny-is-pinned .ny-clock-values{height:44px!important;gap:2px!important}
+ .ny-sale.ny-is-pinned .ny-value{font-size:clamp(13px,2.3vw,19px)!important}
+ .ny-sale.ny-is-pinned .ny-unit{font-size:8px!important}
+}
+@media(max-width:520px){
+ .ny-sale.ny-is-pinned{height:71px!important;min-height:71px!important;max-height:71px!important}
+ .ny-sale.ny-is-pinned .ny-title-art{left:4%!important;top:7px!important;width:47%!important;height:58px!important;max-height:58px!important;transform:none!important}
+ .ny-sale.ny-is-pinned .ny-live-clock{left:52%!important;top:5px!important;width:46%!important;height:59px!important}
+ .ny-sale.ny-is-pinned .ny-clock-caption{font-size:9px!important}
+ .ny-sale.ny-is-pinned .ny-clock-values{height:42px!important;gap:2px!important}
+ .ny-sale.ny-is-pinned .ny-value{font-size:clamp(12px,3.7vw,18px)!important}
+ .ny-sale.ny-is-pinned .ny-unit{font-size:7px!important}
+}
+
 </style>
 </head>
 <body data-preview>
@@ -906,6 +939,7 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
 <span class="hero-spark hs2"><svg viewBox="0 0 24 24" fill="none" stroke="#54B05C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span>
 <span class="hero-spark hs3"><svg viewBox="0 0 24 24" fill="none" stroke="#FDEEE3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span><div class="wrap hero-inner"><div class="hero-copy"><div class="eyebrow">Практика и ум</div><h1 id="heroTitle">Всё нужное для дома<br>в <span>одном месте</span></h1><p>Полезные вещи для дома, ухода за собой<br>и повседневного комфорта.</p><a class="button" href="#goods">Выбрать товар <span aria-hidden="true">→</span></a><div class="hero-chips" aria-label="Направления каталога"><span class="hero-chip">Дом и уют</span><span class="hero-chip">Уход за собой</span><span class="hero-chip">Для повседневного комфорта</span></div></div></div></section>
 <div class="deco-tear" aria-hidden="true"></div>
+<div id="nyStickyAnchor" aria-hidden="true"></div><div id="nyStickySpacer" hidden aria-hidden="true"></div>
 <section class="ny-sale" id="newYearCountdown" aria-label="Предновогодняя распродажа — сезон 26">
   <div class="ny-backdrop" aria-hidden="true">
     <img class="ny-bgl" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39WHOqZ1BewvFjV8zfVYzSULgpc/c592c278-38e4-4bd6-ae5f-ad5713c821ed.webp" width="395" height="370" alt="">
@@ -1126,6 +1160,41 @@ function update(){
 }
 update();
 timer=setInterval(update,1000);
+})();
+</script>
+
+<script>
+/* Showcase: original 185px banner becomes a compact strip under sticky header. */
+(()=>{
+  "use strict";
+  const banner=document.getElementById('newYearCountdown');
+  const header=document.querySelector('.header');
+  const anchor=document.getElementById('nyStickyAnchor');
+  const spacer=document.getElementById('nyStickySpacer');
+  if(!banner||!header||!anchor||!spacer)return;
+  let scheduled=false;
+  function sync(){
+    scheduled=false;
+    const headHeight=Math.ceil(header.getBoundingClientRect().height);
+    banner.style.setProperty('--ny-header-height',headHeight+'px');
+    const threshold=window.scrollY+anchor.getBoundingClientRect().top-headHeight;
+    const pin=window.scrollY>=threshold;
+    if(pin!==banner.classList.contains('ny-is-pinned')){
+      if(pin){
+        spacer.style.height=window.getComputedStyle(banner).height;
+        spacer.hidden=false;
+        banner.classList.add('ny-is-pinned');
+      }else{
+        banner.classList.remove('ny-is-pinned');
+        spacer.hidden=true;
+        spacer.style.height='';
+      }
+    }
+  }
+  function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(sync)}}
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+  sync();
 })();
 </script>
 </body></html>
