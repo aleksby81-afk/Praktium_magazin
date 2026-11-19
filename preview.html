@@ -927,6 +927,33 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
  .ny-sale.ny-is-pinned .ny-unit{font-size:7px!important}
 }
 
+
+/* Smooth transition between original and pinned sale banner. */
+.ny-sale{
+  transition:height .38s cubic-bezier(.22,1,.36,1),
+             min-height .38s cubic-bezier(.22,1,.36,1),
+             max-height .38s cubic-bezier(.22,1,.36,1),
+             box-shadow .38s ease!important;
+}
+.ny-sale .ny-bgl,.ny-sale .ny-bgr,.ny-sale .ny-title-art,.ny-sale .ny-live-clock,
+.ny-sale .ny-clock-caption,.ny-sale .ny-clock-values,.ny-sale .ny-timebox,
+.ny-sale .ny-value,.ny-sale .ny-unit{
+  transition:width .38s cubic-bezier(.22,1,.36,1),
+             height .38s cubic-bezier(.22,1,.36,1),
+             max-height .38s cubic-bezier(.22,1,.36,1),
+             left .38s cubic-bezier(.22,1,.36,1),
+             top .38s cubic-bezier(.22,1,.36,1),
+             font-size .38s cubic-bezier(.22,1,.36,1),
+             padding .38s cubic-bezier(.22,1,.36,1),
+             margin .38s cubic-bezier(.22,1,.36,1),
+             gap .38s cubic-bezier(.22,1,.36,1),
+             opacity .38s ease!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .ny-sale,.ny-sale .ny-bgl,.ny-sale .ny-bgr,.ny-sale .ny-title-art,.ny-sale .ny-live-clock,
+ .ny-sale .ny-clock-caption,.ny-sale .ny-clock-values,.ny-sale .ny-timebox,.ny-sale .ny-value,.ny-sale .ny-unit{transition:none!important}
+}
+
 </style>
 </head>
 <body data-preview>
@@ -1181,7 +1208,7 @@ timer=setInterval(update,1000);
     const pin=window.scrollY>=threshold;
     if(pin!==banner.classList.contains('ny-is-pinned')){
       if(pin){
-        spacer.style.height=window.getComputedStyle(banner).height;
+        spacer.style.height=window.innerWidth<=620?'220px':(window.innerWidth<=800?'160px':'185px');
         spacer.hidden=false;
         banner.classList.add('ny-is-pinned');
       }else{
