@@ -835,6 +835,16 @@ dialog{border:1px solid #d4e0ec;box-shadow:0 30px 90px rgba(12,33,52,.40)}
  .ny-clock-values{gap:3px}
 }
 
+
+/* 2026-11-19: undistorted three-layer holiday banner. Side fragments retain their intrinsic aspect ratio. */
+.ny-backdrop{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important}
+.ny-backdrop .ny-bgl,.ny-backdrop .ny-bgr{position:absolute!important;top:0!important;height:100%!important;max-width:none!important;object-fit:contain!important;opacity:1!important}
+.ny-backdrop .ny-bgl{left:0!important;width:calc(185px * 395 / 370)!important}
+.ny-backdrop .ny-bgr{right:0!important;width:calc(185px * 381 / 370)!important}
+.ny-backdrop .ny-bgm{position:absolute!important;left:calc(185px * 395 / 370)!important;top:0!important;width:calc(100% - 185px * 776 / 370)!important;height:100%!important;max-width:none!important;object-fit:unset!important;opacity:0!important;background-image:url('https://d2ol7oe51mr4n9.cloudfront.net/user_39WHOqZ1BewvFjV8zfVYzSULgpc/e043b2a7-fe7d-4331-993c-f1117307e2ee.webp');background-size:calc(185px * 185 / 370) 185px!important;background-repeat:repeat-x!important;background-position:top left!important}
+.ny-title-art{max-height:180px!important;object-fit:contain!important;object-position:center!important}
+@media(max-width:800px){.ny-backdrop .ny-bgl{width:calc(160px * 395 / 370)!important}.ny-backdrop .ny-bgr{width:calc(160px * 381 / 370)!important}.ny-backdrop .ny-bgm{left:calc(160px * 395 / 370)!important;width:calc(100% - 160px * 776 / 370)!important;background-size:80px 160px!important}.ny-title-art{max-height:155px!important}}
+@media(max-width:620px){.ny-backdrop .ny-bgl{width:calc(220px * 395 / 370)!important}.ny-backdrop .ny-bgr{width:calc(220px * 381 / 370)!important}.ny-backdrop .ny-bgm{left:calc(220px * 395 / 370)!important;width:calc(100% - 220px * 776 / 370)!important;background-size:110px 220px!important}.ny-title-art{max-height:112px!important}}
 </style>
 </head>
 <body data-preview>
